@@ -19,25 +19,7 @@
 			</div>
 		</nav>
 		<div class="row title-container">
-		<!-- IF isTopicOrMain -->
-			<div class="tag-row">
-				<div class="tags-container">
-					<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
-						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-							<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
-							[[tags:select_tags]]
-						</button>
-
-						<ul class="dropdown-menu">
-							<!-- BEGIN tagWhitelist -->
-							<li data-tag="{@value}"><a href="#">{@value}</a></li>
-							<!-- END tagWhitelist -->
-						</ul>
-					</div>
-					<input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
-				</div>
-			</div>
-			<!-- ENDIF isTopicOrMain -->
+			
 			<!-- IF isTopic -->
 			<div class="category-list-container hidden-sm hidden-xs"></div>
 			<!-- ENDIF isTopic -->
@@ -58,6 +40,25 @@
 					<div class="quick-search-results-container"></div>
 				</div>
 			</div>
+			<!-- IF isTopicOrMain -->
+			<div class="tag-row">
+				<div class="tags-container">
+					<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
+						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+							<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
+							[[tags:select_tags]]
+						</button>
+
+						<ul class="dropdown-menu">
+							<!-- BEGIN tagWhitelist -->
+							<li data-tag="{@value}"><a href="#">{@value}</a></li>
+							<!-- END tagWhitelist -->
+						</ul>
+					</div>
+					<input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
+				</div>
+			</div>
+			<!-- ENDIF isTopicOrMain -->
 
 			<div class="pull-right draft-icon hidden-xs hidden-sm"></div>
 
