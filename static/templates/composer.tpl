@@ -29,9 +29,9 @@
 						</button>
 
 						<ul class="dropdown-menu">
-							<!-- BEGIN tagWhitelist -->
+							{{{each tags}}}
 							<li data-tag="{@value}"><a href="#">{@value}</a></li>
-							<!-- END tagWhitelist -->
+							{{{end}}}
 						</ul>
 					</div>
 					<!-- <input class="tags" type="text" class="form-control" placeholder="[[tags:enter_tags_here, {minimumTagLength}, {maximumTagLength}]]" tabindex="5"/> -->
