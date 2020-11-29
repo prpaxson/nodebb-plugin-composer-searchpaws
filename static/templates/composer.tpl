@@ -19,22 +19,22 @@
 			</div>
 		</nav>
 		<div class="row title-container">
-			<!-- IF isTopicOrMain -->
+		<!-- IF isTopicOrMain -->
 			<div class="tag-row">
 				<div class="tags-container">
-					<div class="btn-group dropdown" component="composer/tag/dropdown">
+					<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
 						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
 							<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
 							[[tags:select_tags]]
 						</button>
 
 						<ul class="dropdown-menu">
-							{{{each tags}}}
+							<!-- BEGIN tagWhitelist -->
 							<li data-tag="{@value}"><a href="#">{@value}</a></li>
-							{{{end}}}
+							<!-- END tagWhitelist -->
 						</ul>
 					</div>
-					<!-- <input class="tags" type="text" class="form-control" placeholder="[[tags:enter_tags_here, {minimumTagLength}, {maximumTagLength}]]" tabindex="5"/> -->
+					<input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
 				</div>
 			</div>
 			<!-- ENDIF isTopicOrMain -->
