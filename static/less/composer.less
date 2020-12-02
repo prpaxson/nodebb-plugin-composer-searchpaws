@@ -13,7 +13,7 @@
 }
 
 .composer-submit{
-  border-radius: 6px;
+  border-radius: 6px !important;
   border: 2px #7fb36e solid;
   height: 42px;
   background: #e1ffdd;
@@ -21,7 +21,7 @@
 }
 
 .composer-discard{
-  border-radius: 6px;
+  border-radius: 6px !important;
   border: 2px #ff8585 solid;
   height: 42px;
   background: #ffe0e0;
@@ -30,18 +30,7 @@
 }
 
 
-.dropdown-toggle{
-  border-radius: 6px!important;
-  border: 2px solid #c5cee0;
-  height: 42px;
-  background: #edf1f7;
-  font-family: Poppins;
-  color: #8f9bb3;
-  font-size: 16px;
-  font-weight: 400;
-  box-shadow: 0 0 0!important;
-  overflow: visible !important;
-}
+
 
 .composer {
   .no-select;
@@ -54,6 +43,10 @@
   padding: 0;
 
   position: fixed;
+
+  width: 80%;
+  max-width: 900px;
+
   bottom: 20vh;
   top: 100px !important;
   right: 0;
@@ -62,12 +55,24 @@
 
   border-radius: 20px;
 
-  box-shadow: 0 0 0 15000px rgba(0,0,0,0.5);
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 15px;
+  box-shadow: 0 0 0 15000px rgba(0,0,0,0.5) !important;
+  padding-top: 30px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  padding-bottom: 15px !important;
 
+  .dropdown-toggle{
+    border-radius: 6px!important;
+    border: 2px solid #c5cee0;
+    height: 42px;
+    background: #edf1f7;
+    font-family: Poppins;
+    color: #8f9bb3;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0 0 0!important;
+    overflow: visible !important;
+  }
 
   .composer-container {
     height: 100%;
@@ -110,6 +115,7 @@
     display: flex;
     border-bottom: 1px solid #eee;
     margin: 0;
+    margin-left: 10px;
 
     > div[data-component="composer/title"] {
       flex: 1;
@@ -121,7 +127,8 @@
 
     .title, .handle {
       display: block;
-      margin: 10px;
+      margin: 0;
+      font-size: 16px;
       padding: 8px;
       height: 42px !important;
       border-radius: 6px;
@@ -131,7 +138,7 @@
     .category-list-container {
 
       [component="category-selector"] {
-        margin-right: 0.5em;
+        margin-right: 20px;
 
         .category-dropdown-menu {
           max-height: 300px;
@@ -280,7 +287,7 @@
         width: 50%;
         height: 28px;
         padding: 4px 6px;
-        margin-left: 8px;
+        margin-left: 8px !important;
         font-family: Poppins;
       }
 
@@ -429,7 +436,7 @@
   .draft-icon {
     font-family: 'FontAwesome';
     color: @state-success-text;
-    margin: 0 1em;
+    margin: 0 10px;
     opacity: 0;
     width: 0;
 
