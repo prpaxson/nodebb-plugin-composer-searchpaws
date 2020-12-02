@@ -23,31 +23,6 @@
       <!-- IF isTopic -->
       <div class="category-list-container hidden-sm hidden-xs"></div>
       <!-- ENDIF isTopic -->
-      <div class="tag-row">
-        <div class="tags-container">
-          <div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-              <span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
-              [[tags:select_tags]]
-            </button>
-
-            <ul class="dropdown-menu">
-              <!-- BEGIN tagWhitelist -->
-              <li data-tag="{@value}"><a href="#">{@value}</a></li>
-              <!-- END tagWhitelist -->
-            </ul>
-          </div>
-          <input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row title-container">
-
-      <!-- IF isTopic -->
-      <div class="category-list-container hidden-sm hidden-xs"></div>
-      <!-- ENDIF isTopic -->
 
       <!-- IF showHandleInput -->
       <div data-component="composer/handle">
@@ -56,7 +31,7 @@
       <!-- ENDIF showHandleInput -->
       <div data-component="composer/title">
         <!-- IF isTopicOrMain -->
-        <input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{title}"/>
+        <input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
         <!-- ELSE -->
         <span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
         <!-- ENDIF isTopicOrMain -->
@@ -75,7 +50,23 @@
       </div>
     </div>
     <!-- IF isTopicOrMain -->
+    <div class="tag-row">
+      <div class="tags-container">
+        <div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
+          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+            <span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
+            [[tags:select_tags]]
+          </button>
 
+          <ul class="dropdown-menu">
+            <!-- BEGIN tagWhitelist -->
+            <li data-tag="{@value}"><a href="#">{@value}</a></li>
+            <!-- END tagWhitelist -->
+          </ul>
+        </div>
+        <input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
+      </div>
+    </div>
     <!-- ENDIF isTopicOrMain -->
 
     <div class="category-tag-row">
@@ -166,5 +157,7 @@
     <!-- ENDIF isTopic -->
 
     <div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
+
+    <div class="resizer"><div class="trigger text-center"><i class="fa"></i></div></div>
   </div>
 </div>
