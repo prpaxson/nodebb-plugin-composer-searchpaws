@@ -14,13 +14,10 @@
     "markdown"
   ],
   "author": {
-    "name": "NodeBB Team",
-    "email": "sales@nodebb.org"
+    "name": "Patrick Paxson",
+    "email": "prpaxson@gmail.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/prpaxson/nodebb-plugin-composer-searchpaws/issues"
-  },
   "readmeFilename": "README.md",
   "nbbpm": {
     "compatibility": "^1.14.3"

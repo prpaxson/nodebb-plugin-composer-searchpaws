@@ -25,20 +25,20 @@ plugin.init = async function (data) {
 	const controllers = require('./controllers');
 	SocketPlugins.composer = socketMethods;
 
-	data.router.get('/admin/plugins/composer-default', data.middleware.admin.buildHeader, controllers.renderAdminPage);
-	data.router.get('/api/admin/plugins/composer-default', controllers.renderAdminPage);
+	data.router.get('/admin/plugins/composer-searchpaws', data.middleware.admin.buildHeader, controllers.renderAdminPage);
+	data.router.get('/api/admin/plugins/composer-searchpaws', controllers.renderAdminPage);
 };
 
 plugin.appendConfig = async function (config) {
-	config['composer-default'] = await meta.settings.get('composer-default');
+	config['composer-searchpaws'] = await meta.settings.get('composer-searchpaws');
 	return config;
 };
 
 plugin.addAdminNavigation = async function (header) {
 	header.plugins.push({
-		route: '/plugins/composer-default',
+		route: '/plugins/composer-searchpaws',
 		icon: 'fa-edit',
-		name: 'Composer (Default)',
+		name: 'Composer (SearchPaws)',
 	});
 	return header;
 };
@@ -48,9 +48,9 @@ plugin.addPrefetchTags = async function (hookData) {
 		'/assets/src/modules/composer.js', '/assets/src/modules/composer/uploads.js', '/assets/src/modules/composer/drafts.js',
 		'/assets/src/modules/composer/tags.js', '/assets/src/modules/composer/categoryList.js', '/assets/src/modules/composer/resize.js',
 		'/assets/src/modules/composer/autocomplete.js', '/assets/templates/composer.tpl',
-		'/assets/language/' + (meta.config.defaultLang || 'en-GB') + '/topic.json',
-		'/assets/language/' + (meta.config.defaultLang || 'en-GB') + '/modules.json',
-		'/assets/language/' + (meta.config.defaultLang || 'en-GB') + '/tags.json',
+		'/assets/language/' + (meta.config.searchpawsLang || 'en-GB') + '/topic.json',
+		'/assets/language/' + (meta.config.searchpawsLang || 'en-GB') + '/modules.json',
+		'/assets/language/' + (meta.config.searchpawsLang || 'en-GB') + '/tags.json',
 	];
 
 	hookData.links = hookData.links.concat(prefetch.map(function (path) {
@@ -67,7 +67,6 @@ plugin.getFormattingOptions = async function () {
 	const payload = await plugins.fireHook('filter:composer.formatting', {
 		options: [
 			{ name: 'tags', className: 'fa fa-tags', mobile: true },
-			{ name: 'zen', className: 'fa fa-arrows-alt', title: '[[modules:composer.zen_mode]]', mobile: false },
 		],
 	});
 	return payload ? payload.options : null;

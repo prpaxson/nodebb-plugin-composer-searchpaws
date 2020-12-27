@@ -16,9 +16,6 @@
 		</form>
 
 		<div class="title-container row">
-			<!-- IF isTopic -->
-			<div class="category-list-container"></div>
-			<!-- ENDIF isTopic -->
 			<!-- IF showHandleInput -->
 			<div class="col-sm-3 col-md-12">
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
@@ -124,20 +121,29 @@
 
 		<!-- IF isTopicOrMain -->
 		<div class="tag-row">
-			<div class="tags-container">
-				<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
-					<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-						<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
-						<span class="caret"></span>
-					</button>
+			<!-- IF isTopic -->
+			<div class="col-md-6">
+				<h4 class="col-md-2">Category:</h4>
+				<div class="category-list-container col-md-4"></div>
+			</div>
+			<!-- ENDIF isTopic -->
+			<div class="col-md-6">
+				<h4 class="col-md-2">City:</h4>
+				<div class="tags-container col-md-4">
+					<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
+						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+							<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
+							<span class="caret"></span>
+						</button>
 
-					<ul class="dropdown-menu">
-						<!-- BEGIN tagWhitelist -->
-						<li data-tag="{@value}"><a href="#">{@value}</a></li>
-						<!-- END tagWhitelist -->
-					</ul>
+						<ul class="dropdown-menu">
+							<!-- BEGIN tagWhitelist -->
+							<li data-tag="{@value}"><a href="#">{@value}</a></li>
+							<!-- END tagWhitelist -->
+						</ul>
+					</div>
+					<input class="tags" type="text" class="form-control" placeholder="Select your city" tabindex="5"/>
 				</div>
-				<input class="tags" type="text" class="form-control" placeholder="[[tags:enter_tags_here, {minimumTagLength}, {maximumTagLength}]]" tabindex="5"/>
 			</div>
 		</div>
 		<!-- ENDIF isTopicOrMain -->
