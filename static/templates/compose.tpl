@@ -125,14 +125,16 @@
         <h4 class="col-md-2">City:</h4>
         <div class="tags-container col-md-4">
           <div class="btn-group dropdown" component="composer/tag/dropdown" placeholder="Choose your city" >
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" style="display:flex;">
               <input class="tags" type="text" class="form-control" placeholder="Choose your city" tabindex="5" style="width:auto;"/>
               <span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
               <span class="caret" style="margin-top: 15px;"></span>
             </button>
 
             <ul class="dropdown-menu">
+              <!-- BEGIN tagWhitelist -->
               <li data-tag="{@value}"><a href="#">{@value}</a></li>
+              <!-- END tagWhitelist -->
             </ul>
           </div>
 
