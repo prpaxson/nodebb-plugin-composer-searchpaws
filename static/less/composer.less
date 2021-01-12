@@ -62,6 +62,10 @@
 .composer {
   height:fit-content !important;
 
+  .write{
+    height: -webkit-fill-available;
+  }
+
   [component="category-selector-selected"]{
     margin-left: 10px;
     margin-right: 10px;
@@ -536,6 +540,9 @@
 }
 
 @media (max-width: @screen-sm-max) {
+  .reply{
+    height: 100% !important;
+  }
   .composer{
     margin-top: -60px;
     left:0;
@@ -550,9 +557,6 @@
     }
     .toggle-preview{
       display:none !important;
-    }
-    .write{
-      height: -webkit-fill-available;
     }
     .write-preview-container{
       width: 100vw;
