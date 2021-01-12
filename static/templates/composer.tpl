@@ -61,7 +61,7 @@
           <ul class="dropdown-menu">
             <!-- BEGIN tagWhitelist -->
             <li data-tag="{@value}"><a href="#">{@value}</a></li>
-            <!-- BEGIN tagWhitelist -->
+            <!-- END tagWhitelist -->
           </ul>
         </div>
         <input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
