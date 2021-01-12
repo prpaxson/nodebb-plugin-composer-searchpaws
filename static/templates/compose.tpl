@@ -94,6 +94,12 @@
             <![endif]-->
           </form>
         </ul>
+
+        <div class="btn-group pull-right action-bar">
+          <a href="{discardRoute}" class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</a>
+
+          <button type="submit" form="compose-form" class="btn btn-primary composer-submit" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
+        </div>
       </div>
     </div>
 
@@ -124,11 +130,10 @@
       <div class="col-md-6">
         <h4 class="col-md-2">City:</h4>
         <div class="tags-container col-md-4">
-          <div class="btn-group dropdown" component="composer/tag/dropdown" placeholder="Enter your city">
+          <div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-              <input class="tags" type="text" class="form-control" placeholder="Choose your city" tabindex="5"/>
               <span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
-              <span class="caret" style="margin-top: 15px;"></span>
+              <span class="caret"></span>
             </button>
 
             <ul class="dropdown-menu">
@@ -137,15 +142,9 @@
               <!-- END tagWhitelist -->
             </ul>
           </div>
-
+          <input class="tags" type="text" class="form-control" placeholder="Enter your city" tabindex="5"/>
         </div>
       </div>
-    </div>
-
-    <div class="btn-group pull-right action-bar">
-      <a href="{discardRoute}" class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</a>
-
-      <button type="submit" form="compose-form" class="btn btn-primary composer-submit" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
     </div>
     <!-- ENDIF isTopicOrMain -->
 
