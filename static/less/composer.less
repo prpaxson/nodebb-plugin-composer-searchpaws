@@ -12,6 +12,28 @@
   display: none !important;
 }
 
+.bootstrap-tagsinput{
+  width:100%;
+}
+
+.dropdown{
+  .dropdown-toggle{
+    .bootstrap-tagsinput{
+      min-width: 100px;
+      margin-top: 4px;
+      border:none;
+      background: transparent;
+      .ui-autocomplete-input{
+        display: none;
+      }
+    }
+  }
+}
+
+::placeholder{
+  color: #8f9bb3;
+}
+
 .composer-submit{
   border-radius: 6px !important;
   border: 2px #7fb36e solid;

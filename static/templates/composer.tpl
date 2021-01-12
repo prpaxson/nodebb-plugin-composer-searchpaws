@@ -51,17 +51,15 @@
     </div>
     <!-- IF isTopicOrMain -->
     <div class="tag-row">
-      <div class="tags-container">
-        <div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
-          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+      <div class="tags-container" style="display:flex;">
+        <div class="btn-group dropup" component="composer/tag/dropdown">
+          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" style="padding: 10px; margin-right: 20px;">
             <span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
             Select City
           </button>
 
           <ul class="dropdown-menu">
-            <!-- BEGIN tagWhitelist -->
             <li data-tag="{@value}"><a href="#">{@value}</a></li>
-            <!-- END tagWhitelist -->
           </ul>
         </div>
         <input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
