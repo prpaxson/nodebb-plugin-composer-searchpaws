@@ -133,6 +133,7 @@
 
             <ul class="dropdown-menu">
               <!-- BEGIN tagWhitelist -->
+              <li data-tag="" class="<!-- IF tagWhitelist.length -->hidden<!-- ENDIF tagWhitelist.length -->"><a>Choose a Category First</a></li>
               <li data-tag="{@value}"><a href="#">{@value}</a></li>
               <!-- END tagWhitelist -->
             </ul>
