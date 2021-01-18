@@ -83,7 +83,9 @@
             <li class="spacer"></li>
             <!-- ELSE -->
             <!-- IF !formatting.mobile -->
+            {{{ if (formatting.name != "code")}}}
             <li tabindex="-1" data-format="{formatting.name}" title="{formatting.title}"><i class="{formatting.className}"></i></li>
+            {{{ end }}}
             <!-- ENDIF !formatting.mobile -->
             <!-- ENDIF formatting.spacer -->
           <!-- END formatting -->
