@@ -59,9 +59,15 @@
           </button>
 
           <ul class="dropdown-menu">
+            <!-- IF !tagWhitelist.length -->
+            <!-- BEGIN tags -->
+            <li data-tag="{@value}"><a href="#">{@value}</a></li>
+            <!-- END tags -->
+            <!-- ELSE -->
             <!-- BEGIN tagWhitelist -->
             <li data-tag="{@value}"><a href="#">{@value}</a></li>
             <!-- END tagWhitelist -->
+            <!-- ENDIF !tagWhitelist.length -->
           </ul>
         </div>
         <input class="tags" type="text" class="form-control" placeholder="Enter your city here" tabindex="5"/>
