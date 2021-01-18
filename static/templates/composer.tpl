@@ -60,9 +60,9 @@
 
           <ul class="dropdown-menu">
             <!-- IF !tagWhitelist.length -->
-            <!-- BEGIN tags -->
-            <li data-tag="{@value}"><a href="#">{@value}</a></li>
-            <!-- END tags -->
+            {{{ each tags}}}
+            <li data-tag="{tags.value}"><a href="#">{tags.value}</a></li>
+            {{{ end }}}
             <!-- ELSE -->
             <!-- BEGIN tagWhitelist -->
             <li data-tag="{@value}"><a href="#">{@value}</a></li>
